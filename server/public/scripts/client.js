@@ -20,10 +20,16 @@ myApp.controller('WelcomeController', function(){
   welcome.toggleComments= function(index){
     welcome.posts[index].commentsVisible = !welcome.posts[index].commentsVisible;
     console.log(welcome.posts[index].visible);
+    if(welcome.posts[index].showhide == "Show") {
+      welcome.posts[index].showhide = "Hide";
+    } else {
+      welcome.posts[index].showhide = "Show";
+    }
   };
 
   welcome.saveComment = function(index, comment){
     console.log('saving comment index and comment', index, comment);
+    comment = '- ' + comment;
     welcome.posts[index].comments.push(comment);
   };
 
@@ -34,7 +40,8 @@ myApp.controller('WelcomeController', function(){
       likes: 0,
       visible: true,
       comments:[],
-      commentsVisible: false
+      commentsVisible: false,
+      showhide: "Show"
     };
     welcome.posts[1] = {
       pic: "images/pic.jpeg",
@@ -42,7 +49,8 @@ myApp.controller('WelcomeController', function(){
       likes: 0,
       visible: true,
       comments:[],
-      commentsVisible: false
+      commentsVisible: false,
+      showhide: "Show"
     };
     welcome.posts[2] = {
       pic: "images/pic.jpeg",
@@ -50,7 +58,8 @@ myApp.controller('WelcomeController', function(){
       likes: 0,
       visible: true,
       comments:[],
-      commentsVisible: false
+      commentsVisible: false,
+      showhide: "Show"
     };
     welcome.posts[3] = {
       pic: "images/pic.jpeg",
@@ -66,7 +75,8 @@ myApp.controller('WelcomeController', function(){
       likes: 0,
       visible: true,
       comments:[],
-      commentsVisible: false
+      commentsVisible: false,
+      showhide: "Show"
     };
     welcome.posts[5] = {
       pic: "images/pic.jpeg",
@@ -74,7 +84,8 @@ myApp.controller('WelcomeController', function(){
       likes: 0,
       visible: true,
       comments:[],
-      commentsVisible: false
+      commentsVisible: false,
+      showhide: "Show"
     };
   }
 });

@@ -2,12 +2,16 @@
     border: 1px solid black;
 }
 
+.btn {margin:5px;}
+
 .block {
   height: 200px;
   width: 200px;
   background-color: red;
   margin: auto;
-  margin-bottom: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
 }
 .row {
   background-color: green;
@@ -18,4 +22,27 @@ img {
   height: 200px;
   width: 200px;
   position: absolute;
+  margin-left: -100px;
+}
+
+.picCell {
+  background-color:skyblue;
+  text-align: center;
+}
+
+.likesBtn {
+  display: inline-block;
+}
+
+.likesCounter {
+  display:inline-block;
+}
+
+.comments {
+      position: absolute;
+      background-color: #f9f9f9;
+      z-index: 1;
+      text-align: left;
+      margin-left: -15px;
+      padding:10px;
 }
