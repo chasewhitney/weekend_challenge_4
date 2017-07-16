@@ -1,6 +1,6 @@
 console.log('JS sourced');
 // First param links to <html ng-app="myApp">
-// [] is the dependency injection arrray, what services do we need?
+// [] is the dependency injection array, what services do we need?
 var myApp = angular.module('myApp', []); // leave array empty for now
 
 myApp.controller('WelcomeController', function(){
@@ -28,9 +28,11 @@ myApp.controller('WelcomeController', function(){
   };
 
   welcome.saveComment = function(index, comment){
-    console.log('saving comment index and comment', index, comment);
-    comment = '- ' + comment;
-    welcome.posts[index].comments.push(comment);
+    if(comment != null){
+      console.log('saving comment index and comment', index, comment);
+      comment = '- ' + comment;
+      welcome.posts[index].comments.push(comment);
+    }
   };
 
   function createPosts(){
@@ -67,7 +69,8 @@ myApp.controller('WelcomeController', function(){
       likes: 0,
       visible: true,
       comments:[],
-      commentsVisible: false
+      commentsVisible: false,
+      showhide: "Show"
     };
     welcome.posts[4] = {
       pic: "images/pic.jpeg",

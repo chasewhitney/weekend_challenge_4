@@ -10,22 +10,29 @@
     <title>Weekend Challenge 4</title>
   </head>
   <body ng-app="myApp">
+    <header class="container-fluid">
+      <h1>The Pic Hub</h1>
+    </header>
     <div class="container">
+
       <div ng-controller="WelcomeController as welcome">
         <div class="row">
           <div class="col-md-4 col-sm-6 picCell" ng-repeat="person in welcome.posts">
-            <div class="block" ng-click="welcome.toggleShow($index)">
-              <img ng-show="person.visible" ng-src="{{person.pic}}">
-              <p>{{person.desc}}</p>
-            </div>
-            <button class="btn btn-primary likesBtn" ng-click="welcome.incrementLike($index)">Like!</button>
-            <p class="likesCounter">{{person.likes}} likes!</p>
-            <label>Add a comment below!</label>
-            <input type="text" ng-model="comment">
-            <button class="btn btn-primary" ng-click="welcome.saveComment($index, comment)">Submit!</button>
-            <button class="btn btn-primary" ng-click="welcome.toggleComments($index)">{{person.showhide}} comments</button>
-            <div class="comments col-xs-12" ng-show="person.commentsVisible">
-              <p ng-repeat="item in person.comments track by $index">{{item}}</p>
+            <div class="itemCell">
+              <div class="block" ng-click="welcome.toggleShow($index)">
+                <img ng-show="person.visible" ng-src="{{person.pic}}">
+                <p class="description">{{person.desc}}</p>
+              </div>
+              <button class="btn btn-primary likesBtn" ng-click="welcome.incrementLike($index)">Like!</button>
+              <p class="likesCounter">{{person.likes}} likes!</p>
+              <label>Add a comment below!</label>
+              <input type="text" ng-model="comment">
+              <button class="btn btn-primary" ng-click="welcome.saveComment($index, comment); comment = null">Submit!</button>
+              <button class="btn btn-primary" ng-click="welcome.toggleComments($index)">{{person.showhide}} comments</button>
+              <div class="comments col-xs-12" ng-show="person.commentsVisible">
+                <h5>Comments:</h5>
+                <p ng-repeat="item in person.comments track by $index">{{item}}</p>
+              </div>
             </div>
           </div>
         </div>
