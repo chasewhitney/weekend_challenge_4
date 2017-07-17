@@ -1,3 +1,8 @@
+body {
+  font-family: Bitter;
+  color: midnightblue;
+}
+
 label {
   display:block;
   margin:10px;
@@ -11,15 +16,21 @@ input {
 header {
   background-color:skyblue;
   padding:10px;
+  border-bottom: 1px solid midnightblue;
 }
 
 h1 {
   text-align: center;
-  font-size: 64px;
+  font-size: 82px;
 }
 
 h5 {
   text-decoration: underline;
+}
+
+img {
+  max-width: 250px;
+  max-height: 250px;
 }
 
 .btn {
@@ -38,21 +49,15 @@ h5 {
   padding: 20px;
 }
 
-img {
-  max-width: 250px;
-  position: absolute;
-  margin-left: -125px;
-}
-
 .picCell {
   background-color:white;
   text-align: center;
 }
 
 .likesBtn {
-  margin-left: 100px;
   display: inline-block;
-  text-align:left;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .likesCounter {
@@ -77,6 +82,7 @@ img {
   border: 1px solid midnightblue;
   border-radius: 5px;
   margin-bottom: 15px;
+  height: 500px;
 }
 
 .description {
@@ -86,4 +92,14 @@ img {
 
 .likesDiv {
   text-align:left;
+}
+
+.addCell{
+  margin:5px;
+  background-color:skyblue;
+  padding:10px;
+  border: 1px solid midnightblue;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  height: 275px;
 }

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="vendors/bootstrap/css/bootstrap-theme.css">
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
     <title>Weekend Challenge 4</title>
   </head>
   <body ng-app="myApp">
@@ -24,7 +25,6 @@
               </div>
               <div class="likesDiv">
                 <button class="btn btn-primary likesBtn" ng-click="welcome.incrementLike($index)">Like!</button>
-                <!--<p class="likesCounter">{{person.likes}} likes!</p>-->
                 <p class="likesCounter">{{welcome.howManyLikes($index)}}</p>
               </div>
               <label>Add a comment below!</label>
@@ -33,12 +33,13 @@
               <button class="btn btn-primary" ng-click="welcome.toggleComments($index)">{{person.showhide}} comments</button>
               <div class="comments col-xs-12" ng-show="person.commentsVisible">
                 <h5>Comments:</h5>
+                <p ng-show="person.noComments">No comments yet :(</p>
                 <p ng-repeat="item in person.comments track by $index">{{item}}</p>
               </div>
             </div>
           </div>
           <div class="col-md-4 col-sm-6 picCell">
-            <div class="itemCell">
+            <div class="addCell">
               <h3>Add your own!</h3>
               <label>Enter a description:</label>
               <input type="text" ng-model="desc">
