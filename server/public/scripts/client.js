@@ -36,7 +36,7 @@ myApp.controller('WelcomeController', function(){
   };
 
   welcome.addPic = function(desc, picUrl){
-    var newObj = {
+    var newPic = {
       pic: picUrl,
       desc: desc,
       likes: 0,
@@ -45,10 +45,16 @@ myApp.controller('WelcomeController', function(){
       commentsVisible: false,
       showhide: "Show"
     };
-    welcome.posts.push(newObj);
-
+    welcome.posts.push(newPic);
   };
 
+  welcome.howManyLikes = function(index) {
+    if(welcome.posts[index].likes == 0){
+      return "No likes yet :(";
+    } else {
+      return welcome.posts[index].likes + " likes!";
+    }
+  };
 
   function createPosts(){
     welcome.posts[0] = {

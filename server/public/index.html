@@ -14,7 +14,6 @@
       <h1>The Pic Hub</h1>
     </header>
     <div class="container">
-
       <div ng-controller="WelcomeController as welcome">
         <div class="row">
           <div class="col-md-4 col-sm-6 picCell" ng-repeat="person in welcome.posts">
@@ -23,8 +22,11 @@
                 <img ng-show="person.visible" ng-src="{{person.pic}}">
                 <p ng-show="!person.visible" class="description">{{person.desc}}</p>
               </div>
-              <button class="btn btn-primary likesBtn" ng-click="welcome.incrementLike($index)">Like!</button>
-              <p class="likesCounter">{{person.likes}} likes!</p>
+              <div class="likesDiv">
+                <button class="btn btn-primary likesBtn" ng-click="welcome.incrementLike($index)">Like!</button>
+                <!--<p class="likesCounter">{{person.likes}} likes!</p>-->
+                <p class="likesCounter">{{welcome.howManyLikes($index)}}</p>
+              </div>
               <label>Add a comment below!</label>
               <input type="text" ng-model="comment">
               <button class="btn btn-primary" ng-click="welcome.saveComment($index, comment); comment = null">Submit!</button>
