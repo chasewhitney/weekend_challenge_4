@@ -27,9 +27,8 @@ h5 {
 }
 
 .block {
-  height: 250px;
+  min-height: 250px;
   width: 250px;
-  background-color: white;
   margin: auto;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -40,8 +39,7 @@ h5 {
 }
 
 img {
-  height: 250px;
-  width: 250px;
+  max-width: 250px;
   position: absolute;
   margin-left: -125px;
 }
@@ -81,4 +79,5 @@ img {
 
 .description {
   padding: 30px;
+  background-color: white;
 }

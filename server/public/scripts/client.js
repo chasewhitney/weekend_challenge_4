@@ -35,10 +35,25 @@ myApp.controller('WelcomeController', function(){
     }
   };
 
+  welcome.addPic = function(desc, picUrl){
+    var newObj = {
+      pic: picUrl,
+      desc: desc,
+      likes: 0,
+      visible: true,
+      comments:[],
+      commentsVisible: false,
+      showhide: "Show"
+    };
+    welcome.posts.push(newObj);
+
+  };
+
+
   function createPosts(){
     welcome.posts[0] = {
-      pic: "images/pic.jpeg",
-      desc: "This is a picture of my face. It was taken by my girlfriend. Her face is cuter than mine.",
+      pic: "images/bender.jpg",
+      desc: "This is Bender. I was a little iffy on him he moved in, but he's my little buddy now. He's a timid guy who loves to get loved up.",
       likes: 0,
       visible: true,
       comments:[],
@@ -46,8 +61,8 @@ myApp.controller('WelcomeController', function(){
       showhide: "Show"
     };
     welcome.posts[1] = {
-      pic: "images/pic.jpeg",
-      desc: "This is a picture of my face. It was taken by my girlfriend. Her face is cuter than mine.",
+      pic: "images/zyra.jpg",
+      desc: "This is a Zyra. I just call her kitty. We adopted her from the Humane Society in 2016. She's a sweetheart.",
       likes: 0,
       visible: true,
       comments:[],
@@ -55,8 +70,8 @@ myApp.controller('WelcomeController', function(){
       showhide: "Show"
     };
     welcome.posts[2] = {
-      pic: "images/pic.jpeg",
-      desc: "This is a picture of my face. It was taken by my girlfriend. Her face is cuter than mine.",
+      pic: "images/karen.jpg",
+      desc: "This is my girlfriend, Karen, holding my boy Bruno. Bruno's favorite pastime is getting his belly scratched.",
       likes: 0,
       visible: true,
       comments:[],
@@ -64,8 +79,8 @@ myApp.controller('WelcomeController', function(){
       showhide: "Show"
     };
     welcome.posts[3] = {
-      pic: "images/pic.jpeg",
-      desc: "This is a picture of my face. It was taken by my girlfriend. Her face is cuter than mine.",
+      pic: "images/bang.jpg",
+      desc: "This is Bang! I love playing board games and card games. I need to make more time for board game nights.",
       likes: 0,
       visible: true,
       comments:[],
@@ -73,8 +88,8 @@ myApp.controller('WelcomeController', function(){
       showhide: "Show"
     };
     welcome.posts[4] = {
-      pic: "images/pic.jpeg",
-      desc: "This is a picture of my face. It was taken by my girlfriend. Her face is cuter than mine.",
+      pic: "images/witcher.jpg",
+      desc: "I added this one because I love getting immersed in a game or a show with a great story.",
       likes: 0,
       visible: true,
       comments:[],
@@ -82,8 +97,8 @@ myApp.controller('WelcomeController', function(){
       showhide: "Show"
     };
     welcome.posts[5] = {
-      pic: "images/pic.jpeg",
-      desc: "This is a picture of my face. It was taken by my girlfriend. Her face is cuter than mine.",
+      pic: "images/styro.jpg",
+      desc: "This is random order I made at work while I worked at Styrotech, the only one I happen to have a picture of. I added this picture because I spent a lot of years creating stuff like this.",
       likes: 0,
       visible: true,
       comments:[],

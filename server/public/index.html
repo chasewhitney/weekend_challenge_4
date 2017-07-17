@@ -21,7 +21,7 @@
             <div class="itemCell">
               <div class="block" ng-click="welcome.toggleShow($index)">
                 <img ng-show="person.visible" ng-src="{{person.pic}}">
-                <p class="description">{{person.desc}}</p>
+                <p ng-show="!person.visible" class="description">{{person.desc}}</p>
               </div>
               <button class="btn btn-primary likesBtn" ng-click="welcome.incrementLike($index)">Like!</button>
               <p class="likesCounter">{{person.likes}} likes!</p>
@@ -33,6 +33,16 @@
                 <h5>Comments:</h5>
                 <p ng-repeat="item in person.comments track by $index">{{item}}</p>
               </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 picCell">
+            <div class="itemCell">
+              <h3>Add your own!</h3>
+              <label>Enter a description:</label>
+              <input type="text" ng-model="desc">
+              <label>Enter the picture's URL:</label>
+              <input type="text" ng-model="picUrl">
+              <button class="btn btn-primary" ng-click="welcome.addPic(desc, picUrl); desc = null; picUrl = null">Submit!</button>
             </div>
           </div>
         </div>
